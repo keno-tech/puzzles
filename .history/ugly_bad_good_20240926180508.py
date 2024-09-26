@@ -45,9 +45,9 @@ def simulate_shootout():
             if shooter.alive:
                 targets = [s for s in shooters if s.alive and s != shooter]
                 
-                # if round == 1 and shooter.name == "Ugly":
-                #     continue
-
+                if round == 1 and shooter.name == "Ugly":
+                    continue
+                
                 if targets:
                     # choose strategy 
                     target = max_min_accuracy("max", targets)
@@ -61,7 +61,7 @@ def simulate_shootout():
     # print(f"{winner} is the winner!")
     return winner
 
-N = 100000
+N = 10000
 def simulate_with_stats():
     wins = {"Ugly": 0, "Bad": 0, "Good": 0}
 

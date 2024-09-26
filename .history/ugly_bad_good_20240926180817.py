@@ -45,8 +45,8 @@ def simulate_shootout():
             if shooter.alive:
                 targets = [s for s in shooters if s.alive and s != shooter]
                 
-                # if round == 1 and shooter.name == "Ugly":
-                #     continue
+                if round == 1 and shooter.name == "Ugly":
+                    continue
 
                 if targets:
                     # choose strategy 

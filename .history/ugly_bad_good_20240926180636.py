@@ -61,7 +61,7 @@ def simulate_shootout():
     # print(f"{winner} is the winner!")
     return winner
 
-N = 100000
+N = 10000
 def simulate_with_stats():
     wins = {"Ugly": 0, "Bad": 0, "Good": 0}
 

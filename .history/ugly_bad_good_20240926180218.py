@@ -39,29 +39,24 @@ def simulate_shootout():
     good = Shooter("Good", 3/3)
     
     shooters = [ugly, bad, good]
-    round = 1
+
     while sum([s.alive for s in shooters]) > 1:
         for shooter in shooters:
             if shooter.alive:
                 targets = [s for s in shooters if s.alive and s != shooter]
                 
-                # if round == 1 and shooter.name == "Ugly":
-                #     continue
-
                 if targets:
-                    # choose strategy 
-                    target = max_min_accuracy("max", targets)
+                    target = max_min_accuracy("min", targets)
                     shooter.shoot(target)
 
         # alive_shooters = [s.name for s in shooters if s.alive]
         # print(f"Remaining alive: {', '.join(alive_shooters)}\n")
-        round += 1
-
+    
     winner = [s.name for s in shooters if s.alive][0]
     # print(f"{winner} is the winner!")
     return winner
 
-N = 100000
+N = 10000
 def simulate_with_stats():
     wins = {"Ugly": 0, "Bad": 0, "Good": 0}
 
